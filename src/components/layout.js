@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
@@ -29,6 +30,7 @@ const Layout = ({ children }) => {
       <Navigation />
       <div className="container">
         <h1>{data.site.siteMetadata.title}</h1>
+        <p>{data.site.siteMetadata.description}</p>
         {children}
       </div>
       <Footer />

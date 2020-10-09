@@ -23,7 +23,7 @@ const IndexPage = () => (
     render={data => (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <h1>Hello to the site</h1>
+        <h1>Welcome</h1>
         <div className="row">
         {data.allNodeArticle.edges.map(edge => (
           <>

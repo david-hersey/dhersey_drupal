@@ -1,3 +1,8 @@
+
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby with Drupal Testing`,

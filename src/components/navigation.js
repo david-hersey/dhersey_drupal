@@ -4,13 +4,12 @@ import Navbar from "react-bootstrap/Navbar"
 
 const Navigation = () => (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand to="#home">David Hersey Drupal</Navbar.Brand>
+        <Navbar.Brand><Link to="/">David Hersey Drupal</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-            <Link to="#articleOne" className="nav-link">Article One</Link>
-            <Link to="#articleTwo" className="nav-link">Article Two</Link>
-            <Link to="#articleThree" className="nav-link">Article Three</Link>
-            <Link to="#articleFour" className="nav-link">Article Four</Link>
+            <Link to="/about" className="nav-link">About</Link>
+            <Link to="/services" className="nav-link">Services</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
         </Navbar.Collapse>
     </Navbar>
 )

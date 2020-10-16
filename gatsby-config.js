@@ -6,7 +6,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Gatsby with Drupal Testing`,
-    description: `This is my first look at using Drupal as a headless CMS with Gatsby.`,
+    description: `This is my first look at using a local install of Drupal as a headless CMS with Gatsby.`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -28,6 +28,41 @@ module.exports = {
       resolve: `gatsby-source-drupal`,
       options: {
         baseUrl: `http://localhost:8888/dhersey_drupal/`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-a11y-report',
+      options: {
+        showInProduction: false,
+        toastAutoClose: false,
+        query: `
+          {
+            allSitePage(
+              filter: {
+                path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
+              }
+            ) {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+          }
+        `,
+        ignoreCheck: [
+          '/404*',
+          '/tag/*'
+        ],
+        serverOptions: {
+          host: 'localhost',
+        },
+        axeOptions: {
+          locale: 'gb',
+        },
+        loggingOptions: {
+          result: ['violations', 'incomplete']
+        }
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -25,6 +25,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-react-axe',
+      options: {
+        // Will refine tghis soon
+      },
+    },
+    {
       resolve: `gatsby-source-drupal`,
       options: {
         baseUrl: `http://localhost:8888/dhersey_drupal/`,

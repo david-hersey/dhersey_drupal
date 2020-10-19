@@ -57,7 +57,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const pageTemplate = path.resolve("src/templates/page.js")
         page.data.allNodePage.edges.forEach(edge => {
             console.log('ALIAS?', edge.node.path.alias)
-            // NOT THE RIGHT WAY, PATH SHOULD BE BUILT BY SOMETHING LIKE THE ID/SLUG
+            // NOT THE RIGHT WAY, PATH SHOULD BE BUILT BY SOMETHING LIKE THE ID/SLUG (AS IN LOLLYDESIGN V2)
             // BUT WHILE STILL PLAYI9NG THIS ALLOWS A SINGLE TPL QUERY STRUCTURE
             const pageAlias = edge.node.path.alias ? edge.node.path.alias : "/"
             console.log('PAGE ALIAS:', pageAlias)
